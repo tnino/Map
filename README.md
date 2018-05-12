@@ -7,6 +7,11 @@ API use:
 YELP
 Google Maps
 
+Libraries Used in this project:
+Bootstrap
+Knockout
+jQuery
+
 References:
 https://snazzymaps.com/style/195987/hello-flamingo
 https://google-developers.appspot.com/maps/documentation/utils/geocoder/#place_id%3DChIJz2Whyx61RIYR7mCeZje-QWw
