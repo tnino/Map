@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- The following 3 meta tags lines  have to remeain the first 3 lines in the head;-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="fun things to do in Austin" content="Downtown - Austin)">
+
+    <!-- First include jquery js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+
+    <script src="js/untitled.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js">
+    </script>
+
+    <!-- Then include bootstrap js -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+
+    <link rel="stylesheet" href="css/map.css">
+    <!--<script
+        src="js/Placeslist.js" charset="utf-8">
+    </script> -->
+
+    <script src="js/model.js"></script>
+
+    <!-- load google library-->
+    <script async defer <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyAa-ZSu6n6AJNfe_wuAZbYn0V4JrtyF2gI&v=3&callback=initMap">
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="options-box">
+            <h1>Fun things to do around Austin, Texas</h1>
+            <div>
+                <input id="show-listings" type="button" value="Show Listings">
+                <input id="hide-listings" type="button" value="Hide Listings">
+                <hr>
+                <span class="text"> Draw a shape to search within it for homes!</span>
+                <input id="toggle-drawing" type="button" value="Drawing Tools">
+            </div>
+            <hr>
+            <div>
+                <input id="zoom-to-area-text" type="text" placeholder="Enter your favorite area!">
+                <input id="zoom-to-area" type="button" value="Zoom">
+            </div>
+            <hr>
+            <div>
+                <span class="text"> Within </span>
+                <select id="max-duration">
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                    <option value="30">30 min</option>
+                    <option value="60">1 hour</option>
+                </select>
+                <select id="mode">
+                    <option value="DRIVING">drive</option>
+                    <option value="WALKING">walk</option>
+                    <option value="BICYCLING">bike</option>
+                    <option value="TRANSIT">transit ride</option>
+                </select>
+                <span class="text">of</span>
+                <input id="search-within-time-text" type="text" placeholder="Ex: Google Office NYC or 75 9th Ave, New York, NY">
+                <input id="search-within-time" type="button" value="Go">
+            </div>
+            <hr>
+            <div>
+                <span class="text">Search for nearby places</span>
+                <input id="places-search" type="text" placeholder="Ex: Pizza delivery in NYC">
+                <input id="go-places" type="button" value="Go">
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    </nav>
+    <section class="mapSection">
+        <div id="map"></div>
+    </section>
+    </div>
+
+    <script>
+        function googleError() {
+            alert('Map failed to load');
+        }
+  </body>
+</html>
+
