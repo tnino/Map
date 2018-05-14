@@ -339,4 +339,3 @@ googleError = function googleError() {
     ko.applyBindings(new AppViewModel());
 }
 
-
