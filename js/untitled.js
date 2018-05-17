@@ -67,6 +67,75 @@ function initMap() {
         populateInfoWindow(this, largeInfowindow);
         for (let i = 0; i < markers.length; i++) {
             markers[i].setAnimation(google.maps.Animation.NULL);
+        }let map;
+
+let markers = [];
+
+let contentString = '';
+
+let locations = [{
+{title: 'tacos',location: {lat: 30.245432, lng: -97.75152}},
+ {title: 'pizza',location: {lat: 30.236083, lng: -97.795897}},
+ {title: 'park',location: {lat: 30.266962, lng: -97.772859}},
+ {title: 'thai',location: {lat: 30.250129, lng: -97.754559}},
+ {title: 'sushi', location: {lat: 30.257514, lng: -97.759771}},
+ {title: 'tex mex',location: {lat: 30.245299, lng: -97.757395}}
+];
+
+function locationData(data) {
+    this.title = data.title;
+    this.location = data.locations;
+}
+
+// render map
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: 30.316056,
+            lng: -97.724944
+        },
+        zoom: 15,
+        styles,styles,
+        mapTypeControl: false
+    });
+
+
+    let largeInfowindow = new google.maps.InfoWindow();
+
+
+    let bounds = new google.maps.LatLngBounds();
+    // Style the markers pins.
+    let defaultIcon = makeMarkerIcon('89F4EE');
+    let highlightedIcon = makeMarkerIcon('BC96D8');
+
+
+    // The following group uses the location array to create an array of markers on initialize.
+    for (let i = 0; i < location.length; i++) {
+    // Get the position from the location array.
+        let position = locations[i].location;
+        let title = locations[i].title;
+
+        // Create a marker per location, and put into markers array.
+        let marker = new google.maps.Marker({
+      position: position,
+      title: title,
+      img: img,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      icon: defaultIcon,
+      id: i});
+
+        markers.push(marker);
+
+        marker.addListener('click', openInfoWindow);
+        marker.addListener('mouseover', mouseOver);
+        marker.addListener('mouseout', mouseOut);
+    }
+
+    function openInfoWindow() {
+        populateInfoWindow(this, largeInfowindow);
+        for (let i = 0; i < markers.length; i++) {
+            markers[i].setAnimation(google.maps.Animation.NULL);
         }
         this.setAnimation(google.maps.Animation.BOUNCE);
     }
