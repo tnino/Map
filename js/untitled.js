@@ -5,47 +5,12 @@ let markers = [];
 let contentString = '';
 
 let locations = [{
-    title: 'tacos',
-    location: {
-        lat: 30.245432,
-        lng: -97.75152
-    }
-},
-{
-    title: 'pizza',
-    location: {
-        lat: 30.236083,
-        lng: -97.795897
-    }
-},
-{
-    title: 'park',
-    location: {
-        lat: 30.266962,
-        lng: -97.772859
-    }
-},
-{
-    title: 'thai',
-    location: {
-        lat: 30.250129,
-        lng: -97.754559
-    }
-},
-{
-    title: 'sushi',
-    location: {
-        lat: 30.257514,
-        lng: -97.759771
-    }
-},
-{
-    title: 'tex mex',
-    location: {
-        lat: 30.245299,
-        lng: -97.757395
-    }
-}
+{title: 'tacos',location: {lat: 30.245432, lng: -97.75152}},
+ {title: 'pizza',location: {lat: 30.236083, lng: -97.795897}},
+ {title: 'park',location: {lat: 30.266962, lng: -97.772859}},
+ {title: 'thai',location: {lat: 30.250129, lng: -97.754559}},
+ {title: 'sushi', location: {lat: 30.257514, lng: -97.759771}},
+ {title: 'tex mex',location: {lat: 30.245299, lng: -97.757395}}
 ];
 
 function locationData(data) {
@@ -61,7 +26,8 @@ function initMap() {
             lng: -97.724944
         },
         zoom: 15,
-        fullscreenControl: true
+        styles,styles,
+        mapTypeControl: false
     });
 
 
@@ -231,7 +197,6 @@ googleError = function googleError() {
     alert(
         'Oops. Google Maps did not load. Please refresh the page and try again!');
 };
-
 
 ko.applyBindings(new MyModel());
 // function startApp() {
