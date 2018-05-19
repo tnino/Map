@@ -201,3 +201,4 @@ ko.applyBindings(new MyModel());
 // function startApp() {
 //   ko.applyBindings(new MyModel());
 // }
+
