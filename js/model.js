@@ -1,5 +1,4 @@
-
-    // Create a styles array to use with the map.
+// Create a styles array to use with the map.
     var styles = [
   {
               "featureType": "administrative",
