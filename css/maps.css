@@ -1,94 +1,63 @@
-html,
-
-
-body {
-  font-family: Arial, sans-serif;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+html, body {
+     font-family: sans-serif, helvetica;
+     height: 100%;
+     margin: 0;
+     padding: 4;
 }
-
-
-input {
-  font-size: 12px;
+ input {
+     font-size: 12px;
 }
-
-
-h1 {
-  color: #525454;
-  font-size: 18px;
-  margin: 0 0 3px 0;
-  text-align: center;
+ h1 {
+     color: #525454;
+     font-size: 18px;
+     margin: 0 0 1px 0;
+     text-align: center;
 }
-
-h2 {
-  color: gray;
-  font-size: 12px;
+ h2 {
+     color: gray;
+     font-size: 12px;
+     text-align: center;
 }
-
-ul{
-  list-style-type: none;
-  padding-left: 2px;
-  font-size: 80%;
-  width: 32%;
-  background-color: #D0D7D9;
-  font-color: #59606b;
-  float: right;
-  height: 84%;
+ ul{
+     list-style-type: none;
+     padding-left: 10px;
+     font-size: 100%;
+     width: 32%;
+     background-color: #ffe6ff;
+     font-color: #59606b;
+     float: right;
+     height: 84%;
+     text-align: left;
 }
-
-li{
-  padding: 2px;
-  border-bottom: solid black 5px;
-
+ li{
+     padding: 0px;
+     border-bottom: solid black 0px;
 }
-
-.container {
-    height: 100%;
-    position: relative;
-
+ Locationaustin{
+     padding: 0px;
+     border-bottom: solid black 0px;
+     background-color: #ffe6ff;
 }
-
-.map-container {
-  position: relative;
-  padding-bottom: 75%;
-  height: 0;
-  overflow: hidden;
+ .container {
+     height: 100%;
+     position: relative;
 }
-
-.hamburger{
-  cursor: pointer;
-  padding: 15px;
-  display: none;
+ .map-container {
+     position: relative;
+     padding-bottom: 75%;
+     height: 0;
+     overflow: hidden;
 }
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+ .row:after {
+     content: "";
+     clear: both;
+     display: table;
 }
-
-.searchbar {
-  width: 30%;
-  font-size: 80%;
-  padding-left: 2px;
-  display: table;
-  float: left;
-}
-
-.search-box {
-  width: 300px;
-  margin-bottom: 14px;
-  background-color: black;
-  font-size: 80%;
-}
-
-
-@media only screen and (max-width:100%) {
-  [class*="col-"] {
-       width: 100%;
-   }
-  .hamburger{
-    display: inline;
-  }
+ .searchbar {
+     width: 80%;
+     font-size: 80%;
+     padding-left: 5px;
+     display: table;
+     float: left;
+     background-color: #ffe6ff;
 }
