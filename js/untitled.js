@@ -42,8 +42,7 @@ var ViewModel = function () {
         var address = self.directionField();
         // user needs to make sure that they enter a mailing adress or location to use this feauture.
         if (address == '') {
-            window.alert('let me help you get a taco faster. Please enter an address and it will'
-                'tell you aproximely how long it will take you, result will be display at the bottom of the map.');
+            window.alert('let me help you get a taco faster. Please enter an address and it will tell you aproximely how long it will take you, result will be display at the bottom of the map.');
         } else {
         
             var origins = [];
