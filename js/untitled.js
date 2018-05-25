@@ -34,15 +34,16 @@ var ViewModel = function () {
     }
 
     //---- 
-    // This function allows the user to input a desired travel time, in order to get a tco quicker.
+    // This function allows the user to input a desired travel time, in order to get a taco quicker.
     
     function searchWithinTime() {
         // Initialize the distance matrix service.
         var distanceMatrixService = new google.maps.DistanceMatrixService;
         var address = self.directionField();
-        // user needs to make sure that they enter a mailing adress or location.
+        // user needs to make sure that they enter a mailing adress or location to use this feauture.
         if (address == '') {
-            window.alert('You must enter an address.');
+            window.alert('let me help you get a taco faster. Please enter an address and it will'
+                'tell you aproximely how long it will take you, result will be display at the bottom of the map.');
         } else {
         
             var origins = [];
@@ -319,3 +320,5 @@ function initMap() {
 
     // applyBindings for ViewModel
     ko.applyBindings(new ViewModel());
+
+}
