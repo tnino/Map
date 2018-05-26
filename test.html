@@ -52,7 +52,7 @@
             </select>
             <span class="text">of</span>
             <input id="search-within-time-text" type="text" data-bind="textInput: directionField" placeholder="Ex: Airport or 517 Lightsey rd">
-            <input id="search-within-time" type="button" data-bind="click: go()" value="Go">
+            <input id="search-within-time" type="button" data-bind="click: go('yes')" value="Go">
          </div>
          <div id="map" class="map-container"></div>
          <span data-bind="text: duracion"></span>
@@ -62,3 +62,4 @@
       </div>
       <script async defer  src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry,drawing&key=AIzaSyAa-ZSu6n6AJNfe_wuAZbYn0V4JrtyF2gI&v=3&callback=initMap" ></script>
    </body>
+      
