@@ -19,7 +19,7 @@ var ViewModel = function () {
     this.currentduration = ko.observable('');
     self.maxMode2 = ['DRIVING', 'WALKING', 'BICYCLING', 'TRANSIT'];
     this.currentMode = ko.observable('');
-    console.log(this.currentMode())
+    
 
     //go(self.directionField )
     this.showLocation = ko.observable(true);
@@ -28,8 +28,11 @@ var ViewModel = function () {
     this.duracion = ko.observable();
     this.distancia = ko.observable();
 
-    self.go = function (tst) {
+    this.go = function (tst) {
+        if(this.currentMode() && this.currentduration()){
+
         searchWithinTime()
+        }
 
     }
 
@@ -42,8 +45,8 @@ var ViewModel = function () {
         var address = self.directionField();
         // user needs to make sure that they enter a mailing adress or location to use this feauture.
         if (address == '') {
-            window.alert('let me help you get a taco faster. Please enter an address and it will tell you aproximely how long it will take you, result will be display at the bottom of the map.');
-        } else {
+            window.alert('let me help you get a taco faster. Please enter an address and it will tell you aproximely how long it will take you, result will be display at the bottom of the map');
+    } else {
         
             var origins = [];
             console.log(Locationaustin)
@@ -80,6 +83,7 @@ var ViewModel = function () {
         var atLeastOne = false;
         for (var i = 0; i < origins.length; i++) {
             var results = response.rows[i].elements;
+            console.log(results)
             for (var j = 0; j < results.length; j++) {
                 var element = results[j];
                 if (element.status === "OK") {
@@ -87,17 +91,43 @@ var ViewModel = function () {
 
                    
                     var distanceText = element.distance.text;
-                    console.log(distanceText)
-                    self.distancia = distanceText
+                    //console.log(distanceText)
+                    self.distance = distanceText
 
                     // Duration value is given in seconds so we make it MINUTES. We need both the value
                     // and the text.
                     var duration = element.duration.value / 60;
-                    console.log(duration)
+                    //console.log(duration)
                     var durationText = element.duration.text;
-                    console.log(durationText)
+                    //console.log(durationText)
                     self.duracion = durationText
-                    console.log(self.duracion)
+                    //console.log(self.duracion)
+let aux=results[j].duration.text.split(" ")
+var min=0;
+if(aux.length > 2){
+    min = 60;
+}else{
+    min=Number(aux[0])
+}
+
+console.log(min)
+//if (maxDuration >= 1) {
+            if (Number(maxDuration) >= min) {
+                console.log(Locationaustin[i])
+                console.log("SI",results[j])
+                    Locationaustin[i].marker.setVisible(true);
+                
+            } else {
+                console.log("NO",results[j])
+                    Locationaustin[i].marker.setVisible(false);
+                 // if
+                
+            } // if-else
+        
+
+
+
+
                     document.getElementById('durationText').innerHTML = durationText;
                     document.getElementById('distanceText').innerHTML = distanceText;
                     if (duration <= maxDuration) {
@@ -195,7 +225,7 @@ var populateInfoWindow = function (marker, infowindow) {
                     infowindow.setContent('<div>' + '<h4>' + marker.restaurantname + '</h4> <br><p>' + response.query.search[0].snippet + '</p></div>');
                 } else {
 
-                    alert("no se encontro ninngun sitio llamado " + marker.restaurantname);
+                    alert("there are no place called by that name " + marker.restaurantname);
                 }
             },
             error: function () {
