@@ -1,5 +1,3 @@
-
-
 //Locations array
 var Locationaustin = [{
         restaurantname: 'Torchies Tacos',
@@ -67,7 +65,7 @@ var Locationaustin = [{
         lng: -97.718377
     },
     {
-        restaurantname: 'Truys Tacos',
+        restaurantname: 'Trudy s',
         lat: 30.197259, 
         lng: -97.767025
     },
