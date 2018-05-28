@@ -329,7 +329,7 @@ function initMap() {
             },
             restaurantname: markerrestaurantname,
             id: 1,
-            animation: google.maps.Animation.BOUNCE
+           // animation: google.maps.Animation.BOUNCE
         });
         Locationaustin[i].marker = marker;
         //animate map poimters
